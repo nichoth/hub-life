@@ -1,1 +1,26 @@
-{}
+{
+  "name": "hub-life",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/hub-life.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/hub-life/issues"
+  },
+  "homepage": "https://github.com/nichoth/hub-life#readme",
+  "description": "",
+  "dependencies": {
+    "signalhub": "^4.9.0",
+    "webrtc-swarm": "^2.9.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}
