@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "start": "budo webrtc.js:bundle.js --pushstate --dir=public --live --open -- --debug",
+      "build": "browserify --debug ./webrtc.js > public/bundle.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,13 @@
   "homepage": "https://github.com/nichoth/hub-life#readme",
   "description": "",
   "dependencies": {
+    "htm": "^3.0.4",
+    "preact": "^10.5.12",
     "signalhub": "^4.9.0",
     "webrtc-swarm": "^2.9.0"
   },
   "devDependencies": {
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "budo": "^11.6.4"
   }
 }
