@@ -6,6 +6,8 @@ var hub = signalhub('my-app-name', [
 
 var swarm = wswarm(hub)
 
+console.log('peers here', swarm.peers)
+
 swarm.on('peer', function (stream, id) {
     console.log('CONNECTED to a new peer', id)
     console.log('.peers', swarm.peers)
