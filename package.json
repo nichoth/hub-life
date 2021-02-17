@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-      "start": "budo webrtc.js:bundle.js --pushstate --dir=public --live --open -- --debug",
-      "build": "browserify --debug ./webrtc.js > public/bundle.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "budo webrtc.js:bundle.js --pushstate --dir=public --live --open -- -p esmify --debug",
+    "build": "browserify -p esmify --debug ./webrtc.js > public/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "browserify": "^17.0.0",
-    "budo": "^11.6.4"
+    "budo": "^11.6.4",
+    "esmify": "^2.1.1"
   }
 }
