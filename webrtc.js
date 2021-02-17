@@ -19,8 +19,6 @@ import { useState } from 'preact/hooks'
 
 var swarm = wswarm(hub)
 
-console.log('peers here', swarm.peers)
-
 var state = struct({
     peers: observ({}),
     msgs: observ([])
@@ -33,8 +31,6 @@ swarm.on('peer', function (stream, id) {
     state.peers.set(xtend(state.peers(), newPeer))
 
     stream.on('data', function (data) {
-        // var msgs = state.msgs()
-        // state.msgs.set(msgs.concat([data.toString()]))
         addMsg(data.toString())
     })
 
@@ -49,8 +45,6 @@ function addMsg (msg) {
     var newMsgs = state.msgs().concat([msg])
     state.msgs.set(newMsgs)
 }
-
-// need a reference to the stream so we can write to it later
 
 function App () {
     var [_state, setState] = useState(state())
