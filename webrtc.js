@@ -3,7 +3,6 @@ var signalhub = require('signalhub')
 var hub = signalhub('my-app-name', [
     'https://hub-world.herokuapp.com/'
 ])
-// var through = require('through2')
 var observ = require('observ')
 var struct = require('observ-struct')
 var xtend = require('xtend')
