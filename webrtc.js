@@ -5,7 +5,6 @@ var hub = signalhub('my-app-name', [
 ])
 var observ = require('observ')
 var struct = require('observ-struct')
-var xtend = require('xtend')
 var onend = require('end-of-stream')
 
 // -------------------------------------
@@ -25,9 +24,9 @@ var state = struct({
 
 swarm.on('peer', function (stream, id) {
     console.log('CONNECTED to a new peer', id)
-    var newPeer = {}
-    newPeer[id] = stream
-    state.peers.set(xtend(state.peers(), newPeer))
+    var _peers = state.peers()
+    _peers[id] = stream
+    state.peers.set(_peers)
 
     stream.on('data', function (data) {
         addMsg(data.toString())
@@ -80,4 +79,3 @@ function App () {
 }
 
 render(html`<${App} />`, document.getElementById('content'));
-
