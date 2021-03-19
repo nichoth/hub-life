@@ -1,6 +1,6 @@
 var signalhub = require('signalhub')
 var hub = signalhub('my-app-name', [
-    'https://hub-world.herokuapp.com/'
+    'https://hub-world.herokuapp.com/'  // a server i made
 ])
 
 hub.subscribe('my-channel')
